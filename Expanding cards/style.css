@@ -16,12 +16,12 @@ body{
 }
 .panel{
     border-radius: 50px;
-    background-size: cover;
+    background-size:cover;
     background-position: center;
     background-repeat: no-repeat;
     color: #fff;
     height: 80vh;
-    cursor: pointer;
+    cursor:pointer;
     flex: 0.5;
     margin: 10px;
     position: relative;
