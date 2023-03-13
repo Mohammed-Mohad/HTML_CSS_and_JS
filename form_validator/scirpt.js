@@ -2,7 +2,7 @@ const form = document.getElementById('form');
 const username = document.getElementById("username")
 const email = document.getElementById('email')
 const password = document.getElementById('password')
-const confirm = document.getElementById('confrim')
+const pass2 = document.getElementById('password2')
 
 function showError(input,message){
     const formControl = input.parentElement;
@@ -15,34 +15,22 @@ function showSucess(input){
     formControl.className='form-control valid';
 }
 
+function checkRequired(intputArr){
+    intputArr.forEach((input)=>{
+        if(input.value.trim()===''){
+            showError(input,`${getFieldName(input)} is required`);
+        }
+        else {
+            showSucess(input);
+        }
+    })
+}
+
+function getFieldName(input){
+    return input.id.charAt(0).toUpperCase() + input.id.slice(1);
+}
+
 form.addEventListener('submit',(e)=>{
     e.preventDefault();
-    if(username.value === ''){
-        showError(username,'username is required')
-    }
-    
-    else{
-        showSucess(username);
-    }
-    if(email.value === ''){
-        showError(email,'email is required')
-    }
-    
-    else{
-        showSucess(email);
-    }
-    if(password.value === ''){
-      showError(password,'password is required')
-    }
-    
-    else{
-      showSucess(password);
-    }
-    if(confirmation.value === ''){
-      showError(confirmation,'confirmation password is required')
-    }
-    
-    else{
-      showSucess(confirmation);
-    }
-})
+    checkRequired([username,email,password,pass2]);
+});
