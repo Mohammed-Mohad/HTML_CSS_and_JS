@@ -54,7 +54,7 @@ body{
     border-color:  #2ecc71;
 }
 
-.form-control.invalid input{
+.form-control.error input{
     border-color: #EB455F;
 }
 
@@ -65,7 +65,7 @@ body{
     bottom: 0;
     visibility: hidden;
 }
-form-control.invalid small{
+.form-control.error small{
     visibility: visible;
 }
 
